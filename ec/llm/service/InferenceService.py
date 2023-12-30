@@ -9,6 +9,7 @@ class InferenceService:
         self.__openai_client = OpenAI()
         self.__prompt_template_goty = 'Who won GOTY in {year}?'
         self.__prompt_template_binary_to_decimal = 'Convert {binary_number} to decimal.'
+        self.__prompt_template_binary_to_float = 'Convert {binary_number} to float'
 
     def __inference(self, prompt):
         return CLEAN_TEXT(self.__openai_client.completions.create(
@@ -24,4 +25,8 @@ class InferenceService:
 
     def invoke_binary_to_decimal(self, binary_number: str) -> str:
         prompt = self.__prompt_template_binary_to_decimal.format(binary_number=binary_number)
+        return self.__inference(prompt)
+
+    def invoke_binary_to_float(self, binary_number: str) -> str:
+        prompt = self.__prompt_template_binary_to_float.format(float(binary_number))
         return self.__inference(prompt)
