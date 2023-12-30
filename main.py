@@ -12,15 +12,17 @@ if __name__ == '__main__':
     #print(f"GOTY Result: {goty_result}")
 
     # Ejemplo: Convertir número binario a decimal
-    #binary_to_decimal_result = InferenceService().invoke_binary_to_decimal('1101')
-    #print(f"Binary to Decimal Result: {binary_to_decimal_result}")
+    binary_number = '1101'
+    inference_service = InferenceService()
+    binary_to_decimal_result = inference_service.invoke_binary_to_decimal(binary_number)
+    print(f"Binary to Decimal Result: {binary_to_decimal_result}")
 
-    # Ejemplo: Convertir número binario a float
-    #binary_to_float_result = InferenceService().invoke_binary_to_float('101010')
-    #print(f"Binary to Float Result: {binary_to_float_result}")
+    # Ejemplo: Convertir número binario a octal
+    binary_to_octal_result = inference_service.invoke_binary_to_octal(binary_to_decimal_result)
+    print(f"Binary to Octal Result: {binary_to_octal_result}")
 
     # Ejemplo: Quien es persona
-    print(f"Ingrese el nombre famoso: ")
-    nombre = input()
-    who_is_result = InferenceService().invoke_who_is(nombre)
-    print(f"Who is: {who_is_result}")
+    #print(f"Ingrese el nombre famoso: ")
+    #nombre = input()
+    #who_is_result = InferenceService().invoke_who_is(nombre)
+    #print(f"Who is: {who_is_result}")
