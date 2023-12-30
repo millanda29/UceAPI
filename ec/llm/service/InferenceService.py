@@ -10,7 +10,7 @@ class InferenceService:
         self.__openai_client = OpenAI()
         self.__prompt_template_goty = 'Quien gano el mundial de fútbol en {year}?'
         self.__prompt_template_binary_to_decimal = 'Convert {binary_number} to decimal.'
-        self.__prompt_template_binary_to_octal = 'Convert {decimal_number} to octal'
+        self.__prompt_template_binary_to_octal = 'Convierte el numero {decimal_number} a octal'
         self.__prompt_template_who_is = 'Quien es {persona}?'
 
     def __inference(self, prompt):
