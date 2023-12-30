@@ -7,9 +7,10 @@ class InferenceService:
     def __init__(self):
         self.__model = os.getenv('OPENAI_MODEL', 'text-davinci-003')
         self.__openai_client = OpenAI()
-        self.__prompt_template_goty = 'Who won GOTY in {year}?'
+        self.__prompt_template_goty = 'Quien gano el mundial de fútbol en {year}?'
         self.__prompt_template_binary_to_decimal = 'Convert {binary_number} to decimal.'
         self.__prompt_template_binary_to_float = 'Convert {binary_number} to float'
+        self.__prompt_template_who_is = 'Quien es {persona}?'
 
     def __inference(self, prompt):
         return CLEAN_TEXT(self.__openai_client.completions.create(
@@ -29,4 +30,7 @@ class InferenceService:
 
     def invoke_binary_to_float(self, binary_number: str) -> str:
         prompt = self.__prompt_template_binary_to_float.format(binary_number=binary_number)
+        return self.__inference(prompt)
+    def invoke_who_is(self, persona: str) -> str:
+        prompt = self.__prompt_template_who_is.format(persona=persona)
         return self.__inference(prompt)
