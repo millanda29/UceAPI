@@ -20,5 +20,7 @@ if __name__ == '__main__':
     #print(f"Binary to Float Result: {binary_to_float_result}")
 
     # Ejemplo: Quien es persona
-    who_is_result = InferenceService().invoke_who_is('Leonel Messi')
+    print(f"Ingrese el nombre famoso: ")
+    nombre = input()
+    who_is_result = InferenceService().invoke_who_is(nombre)
     print(f"Who is: {who_is_result}")
