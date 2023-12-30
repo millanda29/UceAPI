@@ -16,5 +16,5 @@ if __name__ == '__main__':
     print(f"Binary to Decimal Result: {binary_to_decimal_result}")
 
     # Ejemplo: Convertir número binario a float
-    float_to_decimal_result = InferenceService().invoke_binary_to_float('101010')
-    print(f"Float to Decimal Result: {float_to_decimal_result}")
+    binary_to_float_result = InferenceService().invoke_binary_to_float('101010')
+    print(f"Binary to Float Result: {binary_to_float_result}")

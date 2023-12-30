@@ -28,5 +28,5 @@ class InferenceService:
         return self.__inference(prompt)
 
     def invoke_binary_to_float(self, binary_number: str) -> str:
-        prompt = self.__prompt_template_binary_to_float.format(float(binary_number))
+        prompt = self.__prompt_template_binary_to_float.format(binary_number=binary_number)
         return self.__inference(prompt)
